@@ -47,3 +47,6 @@
 5. Grave um vídeo de 1 a 3min mostrando o processo de build do seu sistema, com a execução local da aplicação web. Coloque o vídeo no YouTube e o link no README.MD do seu repositório.
 
 6. Envie o link do seu repositório como resposta à tarefa.
+
+
+link do video: https://youtu.be/U4eRF5Kpt0c
