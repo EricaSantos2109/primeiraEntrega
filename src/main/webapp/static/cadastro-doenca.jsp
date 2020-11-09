@@ -1,27 +1,38 @@
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
-<%@ page contentType = "text/html" pageEncoding = "UTF-8" %>
-<%@ page import = "java.util.*" %>
+<%@page import="java.util.List" %>
+<%@ page import = "model.doenca.Doenca" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <html>
     <head>
         <meta charset = "UTF-8">
-        <title>Cadastro de Doença</title>
+        <title>Dados da Doenças</title>
         <link rel = "icon" type = "image/x-icon" href = "assets/save.ico">
-        <link rel = "stylesheet" href = "styles/style.css">
         <link rel = "stylesheet" href = "styles/doenca.css">
     </head>
     <body>
-        <h4 class = "is-center">Cadastro de Doença</h4>
-        <div class = "container">
-            <div class = "hero is-full-screen">
-                <nav class = "tabs is-center">
-                    <a href = "primeira_entrega">Home</a>
-                    <a href = "epidemiologico">Cadastro de Dados Epidemiológico</a>
-                    <a href = "doenca">Cadastro de Dados da Doença</a>
-                    <a href = "visualizacao-epi">Visualizar Dados Epidemiológico</a>
-                    <a href = "visualizacao-doe">Visualizar Dados Doença</a>
+        <div>
+            <div>
+                <nav class="container">
+                    <table>
+                        <th>
+                            <a href = "primeira_entrega">Home</a>
+                        </th>
+                        <th>
+                            <a href = "visualizarEpi">Visualização dos dados Epidemiológicos</a>
+                        </th>
+                        <th>
+                            <a href = "visualizarDoenca">Visualizar Doença</a>
+                        </th>
+                        <th>
+                            <a href = "doenca">Cadastro de dados da doença</a>
+                        </th>
+                        <th>
+                            <a href = "epidemiologico"> Cadastro de dados epidemiológicos</a>
+                        </th>
+                    </table>
                 </nav>
-                <div id = "doenca">
+                    <h3>Dado de Coleta de Doença</h3>
+                <div id = "doenca" class="center">
                     <div class = "row">
                         <div class = "col">
                             <h3>
@@ -29,14 +40,14 @@
                                     try {
                                         String option = (String) request.getAttribute("option");
                                         if (option.equals("criar")) {
-                                            out.print("Cadastrar nova doenca");
+                                            out.print("Cadastrar nova doença");
                                         }
                                     } catch (Exception e) {
-                                        out.print("Cadastrar novo produto");
+                                        out.print("Cadastrar nova doença");
                                     }
                                 %>
                             </h3>
-                            <form action = "cadastroDoenca" method = "POST">
+                            <form action = "doenca" method = "POST">
                                 <%
                                     Doenca doenca;
                                     try {
@@ -44,15 +55,8 @@
                                     } catch (Exception e) {
                                         doenca = new Doenca();
                                     }
-                                    if ( doenca.getCode() == null || doenca.getCode().trim().equals("") ) {
-                                        out.print("Identificador: <input type = 'text' name = 'id'/><br>");
-                                        out.print("Nome: <input type = 'text' name = 'name'/><br>");
-                                        out.print("Sintomas: <input type = 'text' name = 'sintomas'/><br>");
-                                    } else {
-                                        out.print("Identificador: <input type = 'text' name = 'id' value = '" + doenca.getCode() + "'/><br>");
-                                        out.print("Nome: <input type = 'text' name = 'name' value = '" + doenca.getName() + "'/><br>");
-                                        out.print("Sintomas: <input type = 'text' name = 'sintomas' value = '" + doenca.getSintomas() + "'/><br>");
-                                    }
+                                    out.print("Nome: <input type = 'text' name = 'name'/><br>");
+                                    out.print("Sintomas: <input type = 'text' name = 'sintomas'/><br>");                                        
                                 %>
                                 <%
                                     try {
@@ -60,6 +64,9 @@
                                         if (option.equals("criar")) {
                                             out.print("<input type = 'reset' value = 'Cancelar' style = 'align-items: center'/>");
                                             out.print("<input type = 'submit' value = 'Cadastrar' style = 'align-items: center'/>");
+                                        }else if (option.equals("editar")) {
+                                            out.print("<input type = 'reset' value = 'Cancelar' style = 'align-items: center'/>");
+                                            out.print("<input type = 'submit' value = 'Salvar' style = 'align-items: center'/>");
                                         }
                                     } catch (Exception e) {
                                         out.print("<input type = 'reset' value = 'Cancelar' style = 'align-items: center'/>");
@@ -72,9 +79,9 @@
                 </div>
             </div>
         </div>
-        <footer class = "is-text-center">
+        <footer>
             <p>
-                Sistema de coleta e visualização de dados epidemiológicos - Desenvolvido por Érica dos Santos
+                <b>Sistema de dado de coletas e visualização de dados epidemiológicos</b>
             </p>
         </footer>
     </body>

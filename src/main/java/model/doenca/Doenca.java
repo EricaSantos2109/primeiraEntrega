@@ -11,7 +11,8 @@ import javax.persistence.Id;
 @Entity(name = "doenca")
 public class Doenca {
     @Id
-    private Long id;
+    @GeneratedValue(strategy=GenerationType.AUTO) // Gera o id automaticamente
+    private int id;
     @Column(name = "name")
     private String name;
     @Column(name = "sintomas")
@@ -19,11 +20,11 @@ public class Doenca {
 
     public Doenca() { }
 
-    public Long getId() {
+    public int getId() {
         return this.id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -31,7 +32,7 @@ public class Doenca {
         return this.name;
     }
 
-    public void setNome(String nome) {
+    public void setName(String name) {
         this.name = name;
     }
 

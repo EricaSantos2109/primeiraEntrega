@@ -10,6 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns={"/primeira_entrega"})
 public class PrimeiroServlet extends HttpServlet{
 
+    public static void main(String[] args){
+
+    }
+
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp){
        

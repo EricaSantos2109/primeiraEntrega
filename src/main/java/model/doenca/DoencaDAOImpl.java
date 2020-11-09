@@ -7,6 +7,7 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 public class DoencaDAOImpl implements DoencaDAO{
+
     public Doenca saveDoenca(Doenca doenca) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("doenca");     
         EntityManager em = emf.createEntityManager();
@@ -33,7 +34,7 @@ public class DoencaDAOImpl implements DoencaDAO{
         EntityManager em = emf.createEntityManager();
         Doenca doen = em.find(Doenca.class, doenca.getId());
         em.getTransaction().begin();
-        doen.setNome(doenca.getName());
+        doen.setName(doenca.getName());
         doen.setSintomas(doenca.getSintomas());
         em.getTransaction().commit();
         em.close();
