@@ -1,3 +1,52 @@
 input {
     margin-right: 20px;
-}
+  }
+  
+  .container {
+    align-items: center;
+    background-color: azure;
+  }
+  
+  table,
+  th,
+  td {
+    margin-top: 20px;
+    table-layout: fixed;
+    text-align: center;
+    width: 90%;
+  }
+  
+  .center {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+  }
+  
+  input{
+      margin-bottom: 20px;
+  }
+  
+  p{
+      text-align: center;
+  }
+  
+  h3{
+      text-align: center; 
+      margin-top: 30px;
+  }
+  
+  footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+  }
+  
+  body{
+      background-color: aquamarine;
+  }
+  

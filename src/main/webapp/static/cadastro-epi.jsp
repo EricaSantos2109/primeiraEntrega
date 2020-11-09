@@ -1,13 +1,13 @@
 <%@page import="java.util.List" %>
-<%@ page import = "model.doenca.Doenca" %>
+<%@ page import = "model.epi.Epi" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <html>
     <head>
         <meta charset = "UTF-8">
-        <title>Dados da Doenças</title>
+        <title>Dados Epidemiologico</title>
         <link rel = "icon" type = "image/x-icon" href = "assets/save.ico">
-        <link rel = "stylesheet" href = "styles/doenca.css">
+        <link rel = "stylesheet" href = "styles/epi.css">
     </head>
     <body>
         <div>
@@ -31,8 +31,8 @@
                         </th>
                     </table>
                 </nav>
-                    <h3>Dado de Coleta de Doença</h3>
-                <div id = "doenca" class="center">
+                    <h3>Dado de Coleta Epidemiologico</h3>
+                <div id = "epi" class="center">
                     <div class = "row">
                         <div class = "col">
                             <h3>
@@ -40,23 +40,23 @@
                                     try {
                                         String option = (String) request.getAttribute("option");
                                         if (option.equals("criar")) {
-                                            out.print("Cadastrar nova doença");
+                                            out.print("Cadastrar novo dado");
                                         }
                                     } catch (Exception e) {
-                                        out.print("Cadastrar nova doença");
+                                        out.print("Cadastrar novo dado");
                                     }
                                 %>
                             </h3>
-                            <form action = "doenca" method = "POST">
+                            <form action = "epi" method = "POST">
                                 <%
-                                    Doenca doenca;
+                                    Epi epi;
                                     try {
-                                        doenca = (Doenca) request.getAttribute("doenca");
+                                        epi = (Epi) request.getAttribute("epi");
                                     } catch (Exception e) {
-                                        doenca = new Doenca();
+                                        epi = new Epi();
                                     }
-                                    out.print("Nome: <input type = 'text' name = 'name'/><br>");
-                                    out.print("Sintomas: <input type = 'text' name = 'sintomas'/><br>");                                        
+                                    out.print("Data de coleta: <input type = 'date' name = 'coleta'/><br>");
+                                    out.print("Doença Associada: <input type = 'text' name = 'associada'/><br>");                                        
                                 %>
                                 <%
                                     try {

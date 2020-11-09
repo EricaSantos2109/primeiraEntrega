@@ -3,10 +3,29 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
              http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
 	version="2.1">
+
   <persistence-unit name = "doenca">
-    <description>Sistema de coleta e visualização de dados epidemiológicos - Desenvolvido por Érica dos Santos</description>
+    <description>Sistema de coleta - Desenvolvido por Érica dos Santos</description>
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
     <class>model.doenca.Doenca</class>
+    <properties>
+      <!-- <property name = "hibernate.dialect" value = "org.hibernate.dialect.MySQLDialect" />  -->
+      <property name = "hibernate.dialect" value = "org.hibernate.dialect.MariaDB53Dialect" />
+      <property name = "javax.persistence.jdbc.driver" value = "org.mariadb.jdbc.Driver" />
+      <property name = "javax.persistence.jdbc.url" value = "jdbc:mysql://localhost:3306/sistema" />
+      <property name = "javax.persistence.jdbc.user" value = "root" />
+      <property name = "javax.persistence.jdbc.password" value = "root" />
+      <property name = "hibernate.show_sql" value = "true" />
+      <property name = "hibernate.hbm2ddl.auto" value = "update" />
+      <property name = "hibernate.format_sql" value = "true" />
+      <property name = "hibernate.id.new_generator_mappings" value = "true" />
+    </properties>
+  </persistence-unit>
+
+  <persistence-unit name = "epi">
+    <description>Sistema de visualização de dados epidemiológicos - Desenvolvido por Érica dos Santos</description>
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+    <class>model.epi.Epi</class>
     <properties>
       <!-- <property name = "hibernate.dialect" value = "org.hibernate.dialect.MySQLDialect" />  -->
       <property name = "hibernate.dialect" value = "org.hibernate.dialect.MariaDB53Dialect" />
