@@ -26,24 +26,23 @@ public class CadEpi extends HttpServlet{
         } catch (Exception e) {
             System.out.println("An exception was thrown");
             System.out.println(e.toString());
-        }
-        
+        }       
     }
 
     @Override
     public void doPost (HttpServletRequest req, HttpServletResponse res) throws ServletException{
         try {
             req.setCharacterEncoding("UTF-8");
-            // Declara objeto doenca
+            // Declara objeto epidemiologico
             Epi epi;
             try {
-                // Verifica se já existe uma doenca com o id especificado na requisição
+                // Verifica se já existe um dado epidemiologico com o id especificado na requisição
                 List<Epi> epis = new EpiDAOImpl().findByCode(req.getParameter("id"));
                 // Se a lista estiver vazia criamos uma nova doença
                 if (epis.isEmpty()) {
                     epi = new Epi();
                 } else {
-                    // Caso a lista não esteja vazia significa que existe doença com este id
+                    // Caso a lista não esteja vazia significa que existe dado epidemiologico com este id
                     epi = epis.get(0);
                 }
             } catch (Exception e) {
@@ -69,7 +68,7 @@ public class CadEpi extends HttpServlet{
                     // Salva os dados da classe
                     Epi saveEpi = new EpiDAOImpl().saveEpi(epi);
                 }
-                // Encaminha os dados da doença para o template
+                // Encaminha os dados epidemiologico para o template
                 req.setAttribute("epi", epi);
                 req.getRequestDispatcher("/static/cadastro-epi.jsp").forward(req, res);
             } else {

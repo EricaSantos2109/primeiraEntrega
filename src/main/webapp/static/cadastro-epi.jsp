@@ -10,28 +10,16 @@
         <link rel = "stylesheet" href = "styles/epi.css">
     </head>
     <body>
+        <ul>
+            <li><a href="primeira_entrega">Home</a></li>
+            <li><a href="visualizarEpi">Visualização dos dados Epidemiológicos</a></li>
+            <li><a href="visualizarDoenca">Visualizar Doença</a></li>
+            <li><a href="doenca">Cadastro de dados da doença</a></li>
+            <li><a href="epi">Cadastro de dados epidemiológicos</a></li>
+        </ul>
         <div>
             <div>
-                <nav class="container">
-                    <table>
-                        <th>
-                            <a href = "primeira_entrega">Home</a>
-                        </th>
-                        <th>
-                            <a href = "visualizarEpi">Visualização dos dados Epidemiológicos</a>
-                        </th>
-                        <th>
-                            <a href = "visualizarDoenca">Visualizar Doença</a>
-                        </th>
-                        <th>
-                            <a href = "doenca">Cadastro de dados da doença</a>
-                        </th>
-                        <th>
-                            <a href = "epi"> Cadastro de dados epidemiológicos</a>
-                        </th>
-                    </table>
-                </nav>
-                    <h3>Dado de Coleta Epidemiologico</h3>
+                <h3>Dado de Coleta Epidemiologico</h3>
                 <div id = "epi" class="center">
                     <div class = "row">
                         <div class = "col">
@@ -81,7 +69,7 @@
         </div>
         <footer>
             <p>
-                <b>Sistema de dado de coletas e visualização de dados epidemiológicos</b>
+                Sistema de dado de coletas e visualização de dados epidemiológicos
             </p>
         </footer>
     </body>

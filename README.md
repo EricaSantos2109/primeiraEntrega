@@ -1,4 +1,3 @@
-
 **Nome:** Érica dos Santos Moreira da Rosa.
 
 **RA:** 1460481821022
@@ -6,47 +5,48 @@
 **Professor:** Fabricio Galende
 
 **Disciplina:** Laboratorio de Engenharia de Software
+ 
+Desenvolver um sistema de coleta e visualização de dados epidemiológicos. 
+Atentar para os seguintes requisitos de dados e funcionais: 
 
+Dado da doença: 
+
+ - Identificador (id);
+ -  Nome;
+
+Sintomas. Dado epidemiológico: 
+
+ - Identificador (id);   
+ - Data de coleta;  
+ - Doença associada;
+
+ O cadastro de dado epidemiológico, cadastro de doença, visualização de dados epidemiológicos e a visualização de doenças cadastradas devem ser feitos em interfaces de usuário distintas (4 páginas). A visualização dos dados epidemiológicos deve ser feita de forma gráfica. Uma vez escolhida a doença, o sistema recupera dos dados e cria um gráfico com a evolução dos casos da doença, por dia. A visualização dos dados de doença deve ser feita de modo tabular, com tabela gerada de modo dinâmico, de acordo com a quantidade de doenças cadastradas.
   
-  
+Video da primeira entrega: https://youtu.be/U4eRF5Kpt0c
 
-## Primeira Entrega
+Video da segunda entrega:
 
-  
+## Conectar ao banco e executar o script para criar a base de dados
+```
+CREATE DATABASE sistema;
+```
+### Conectar ao banco e executar o script para criar o usuário e dar acesso ao banco
 
-1. Crie um Repositório GitHub.
+```
+mysql > CREATE USER 'root' IDENTIFIED BY 'root';
+```
+```
+mysql > GRANT ALL PRIVILEGES ON *.* TO 'root' IDENTIFIED BY 'root' WITH GRANT OPTION;
+```
+```
+mysql > SELECT User, Host FROM mysql.user;
+```
+```
+flush privileges;
+```
 
-2. Crie uma aplicação web de página única contendo:
+## Executar com o gradle
 
-  
-  
-
-  
-
-- a) Linha 1: Título do Trabalho;
-
-  
-
-  
-
-- b) Linha 2: Seu nome e RA;
-
-  
-
-  
-
-- c) Linha 3: O nome do prof. da disciplina.
-
-  
-  
-
-3. Faça o build usando o Gradle (ou Flask, caso use Python).
-
-4. Envie as dependências e código para seu repositório (assegure-se de que somente os arquivos apropriados devem estar no repositório). **Além disso, esse repositório deve ser PERMANENTE e não deve ser modificado até a entrega final. Caso isso ocorra, sua nota nas entregas anteriores será ZERADA.**
-
-5. Grave um vídeo de 1 a 3min mostrando o processo de build do seu sistema, com a execução local da aplicação web. Coloque o vídeo no YouTube e o link no README.MD do seu repositório.
-
-6. Envie o link do seu repositório como resposta à tarefa.
-
-
-link do video: https://youtu.be/U4eRF5Kpt0c
+```
+$ gradle apprun
+```

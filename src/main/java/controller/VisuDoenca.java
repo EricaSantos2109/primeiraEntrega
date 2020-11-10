@@ -7,21 +7,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns={"/primeira_entrega"})
-public class PrimeiroServlet extends HttpServlet{
-
-    public static void main(String[] args){
-
-    }
+@WebServlet(urlPatterns={"/visualizarDoenca"})
+public class VisuDoenca extends HttpServlet{
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp){
         try{
-            req.getRequestDispatcher("static/home.jsp").forward(req, resp);
+            req.getRequestDispatcher("static/visu-doenca.jsp").forward(req, resp);
         }catch(Exception e){
-            System.out.println("Impossível escrever o nome do aluno e do professor, RA e Disciplina");
+            System.out.println("Impossível abrir a pagina");
         }
-        
     }
-
 }

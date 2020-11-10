@@ -2,20 +2,6 @@ input {
   margin-right: 20px;
 }
 
-.container {
-  align-items: center;
-  background-color: azure;
-}
-
-table,
-th,
-td {
-  margin-top: 20px;
-  table-layout: fixed;
-  text-align: center;
-  width: 90%;
-}
-
 .center {
     margin: 0;
     position: absolute;
@@ -44,8 +30,35 @@ footer {
     bottom: 0;
     width: 100%;
     text-align: center;
+    background-color: #333;
+    color: #fff;
 }
 
 body{
     background-color: aquamarine;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
 }
