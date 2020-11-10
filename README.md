@@ -24,7 +24,7 @@ Sintomas. Dado epidemiológico:
   
 Video da primeira entrega: https://youtu.be/U4eRF5Kpt0c
 
-Video da segunda entrega:
+Video da segunda entrega: https://youtu.be/uFeRjlty3H4
 
 ## Conectar ao banco e executar o script para criar a base de dados
 ```
